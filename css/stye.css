@@ -139,6 +139,8 @@ html {
 }
 .header .menu__link:hover {
   border-bottom: 5px #11749e solid;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 @media (max-width: 992px) {
   .header .header__social {
@@ -304,7 +306,7 @@ html {
   height: 19px;
   color: #11749e;
   font-family: Gotham_Medium;
-  font-size: 25px;
+  font-size: calc(10px + 15 * (100vw / 1600));
   font-weight: 500;
   font-style: normal;
   letter-spacing: 20px;
@@ -319,6 +321,12 @@ html {
   position: absolute;
   bottom: 100px;
   z-index: 1;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+#home .home__scroll-down:hover {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 #home .home__btn {
   z-index: 1;
@@ -481,7 +489,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 16px;
+  font-size: 20px;
   display: block;
 }
 @media (max-width: 1360px) {
@@ -533,7 +541,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   max-width: 50%;
-  font-size: 16px;
+  font-size: 20px;
 }
 @media (max-width: 1360px) {
   #third .third__main-block-two-text {
@@ -1128,6 +1136,12 @@ html {
   cursor: pointer;
   outline: none;
   border: 0;
+  border-radius: 5px;
+}
+#form .form__button:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #0c5777;
 }
 
 .nine {
@@ -1161,43 +1175,34 @@ html {
   height: 30px;
   line-height: 115;
 }
-#button {
-  display: inline-block;
-  background-color: #333;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
+.scrollup {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  -webkit-transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-}
-
-#button::after {
-  content: "";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
+  /* фиксированная позиция */
   color: #fff;
-}
-
-#button:hover {
+  /* цвет текста */
+  background-color: #286090;
+  /* цвет заднего фона */
+  right: 20px;
+  /* расстояние от правого края */
+  bottom: 0px;
+  /* расстояние от нижнего края */
+  padding: 4px 10px;
+  /* отступы до содержимого блока */
+  font-size: 20px;
+  /* размер шрифта (иконки) */
+  border-top-left-radius: 4px;
+  /* скругление верхнего левого угла */
+  border-top-right-radius: 4px;
+  /* скругление верхнего правого угла */
   cursor: pointer;
-  background-color: #333;
+  /* форма курсора */
+  display: none;
+  /* не отображать элемент */
+  text-align: center;
+  /*выравнивание содержимого элемента по центру */
 }
 
-#button:active {
-  background-color: #555;
-}
-
-#button.show {
-  opacity: 1;
-  visibility: visible;
+.scrollup:hover {
+  background-color: #000;
+  /* цвет заднего фона при наведении */
 }
